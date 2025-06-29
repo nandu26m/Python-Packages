@@ -71,12 +71,3 @@ Grouped by `Product` and analyzed quantity and price relationships.
 - **Text Output**: Top product combinations sold together
 
 ---
-
-## File Structure
-Sales-Analysis/
-│
-├── Sales_Data/ # Monthly sales CSVs
-├── all_data.csv # Combined and cleaned data
-├── sales_analysis.py # Main analysis script
-├── README.md # This file
-└── requirements.txt # (Optional) Dependencies list
