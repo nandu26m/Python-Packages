@@ -1,73 +1,41 @@
 # Sales Data Analysis Project
 
-This project is a comprehensive data analysis of a retail store's sales performance across multiple U.S. cities over a year. It uses **Python (Pandas, Matplotlib)** to clean, process, and explore sales data to answer key business questions.
+## Overview
+This project analyzes 12 months of sales data from multiple CSV files to extract meaningful business insights. The analysis covers sales trends by month, city, hour of the day, product combinations frequently sold together, and product popularity. The goal is to uncover actionable insights that can help optimize marketing strategies, inventory management, and overall sales performance.
 
----
+## Project Structure
+- **Data Loading and Merging:** Merging sales data from 12 monthly CSV files into a single DataFrame for analysis.
+- **Data Cleaning:** Handling missing values, filtering invalid rows, and correcting erroneous data entries.
+- **Feature Engineering:** Adding new columns such as `Month`, `Sales`, `City`, and `Hour` for better segmentation.
+- **Analysis Tasks:**
+  1. Identifying the best month for sales and total revenue earned.
+  2. Determining which city generated the highest sales.
+  3. Analyzing peak sales hours to optimize advertisement timing.
+  4. Discovering the most common product pairs sold together.
+  5. Investigating the most sold product and possible reasons behind its popularity.
 
-## Dataset
-
-Sales data from various months in 2019, stored in individual CSV files under the `Sales_Data` directory.
-
-### Columns:
-- `Order ID`
-- `Product`
-- `Quantity Ordered`
-- `Price Each`
-- `Order Date`
-- `Purchase Address`
-
----
-
-## Tools Used
-
-- Python 3.x
+## Libraries Used
 - pandas
+- regex
 - matplotlib
-- os
-- collections
-- itertools
+- collections (Counter)
+- itertools (combinations)
 
----
+## Key Findings
+- **Best Month for Sales:** [Insert Month], with total sales of $[Insert Amount].
+- **Top Sales City:** San Francisco CA generated the highest sales revenue.
+- **Peak Sales Hours:** Sales peaked between [Insert Hour Range], suggesting optimal advertisement times.
+- **Most Common Product Pairs:** 'iPhone' and 'Lightning Charging Cable' were the most frequently sold together.
+- **Top Selling Product:** [Insert Product Name], likely due to its affordability/popularity/necessity.
 
-## Data Cleaning Steps
+## How to Run
+1. Mount Google Drive (if using Colab) and set the working directory to the sales data folder.
+2. Run the Python script cells sequentially to load, clean, and analyze the data.
+3. Visualizations will be generated inline using matplotlib.
+4. Modify paths or filenames as necessary based on your file locations.
 
-1. **Merged all monthly CSVs** into a single DataFrame.
-2. **Dropped NaN rows** and handled bad headers.
-3. Converted data types for:
-   - `Quantity Ordered` → `int`
-   - `Price Each` → `float`
-4. Extracted new columns:
-   - `Month` and `Hour` from `Order Date`
-   - `City` from `Purchase Address`
-5. Calculated additional columns:
-   - `Sales = Quantity Ordered * Price Each`
-
----
-
-## Analysis Performed
-
-### 1. Best Month for Sales
-Identified total sales by month to determine peak seasonality.
-
-### 2. Top Performing Cities
-Grouped data by `City` to visualize regions with highest revenue.
-
-### 3. Best Time to Advertise
-Extracted `Hour` from order time to suggest optimal ad display times.
-
-### 4. Frequently Sold Together Products
-Used `Order ID` duplicates and combinations to find top product bundles.
-
-### 5. Best Selling Products
-Grouped by `Product` and analyzed quantity and price relationships.
-
----
-
-## Example Visualizations
-
-- **Bar Chart**: Monthly sales trends
-- **Bar Chart**: Sales by city
-- **Line Plot**: Order frequency by hour
-- **Text Output**: Top product combinations sold together
-
----
+## Future Improvements
+- Enhance data validation to catch more irregularities.
+- Incorporate more granular time-based analysis (e.g., day of week).
+- Use advanced association rule mining (e.g., Apriori algorithm) for product bundling.
+- Deploy dashboards for real-time insights and automated reporting.
