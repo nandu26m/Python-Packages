@@ -1,7 +1,7 @@
 
 # 🐼 Pandas Cheat Sheet (2025 Master Version)
 
-## ✅ 1. Data Import
+## 1. Data Import
 
 ```python
 import pandas as pd
@@ -15,7 +15,7 @@ df = pd.read_html('page.html')[0]
 df = pd.read_clipboard()
 ```
 
-## ✅ 2. Data Export
+## 2. Data Export
 
 ```python
 df.to_csv('output.csv', index=False)
@@ -25,7 +25,7 @@ df.to_json('output.json', orient='records')
 df.to_sql('table_name', con=connection, if_exists='replace')
 ```
 
-## ✅ 3. Data Selection & Indexing
+## 3. Data Selection & Indexing
 
 ```python
 df['column']
@@ -41,7 +41,7 @@ df.reset_index()
 df.xs(key=2024, level='year')
 ```
 
-## ✅ 4. Data Cleaning
+## 4. Data Cleaning
 
 ```python
 df['col'].str.lower()
@@ -59,7 +59,7 @@ df.duplicated()
 df.drop_duplicates()
 ```
 
-## ✅ 5. Data Transformation
+## 5. Data Transformation
 
 ```python
 df['new'] = df['col'].apply(lambda x: x * 2)
@@ -78,7 +78,7 @@ pd.cut(df['score'], bins=3)
 pd.qcut(df['score'], q=4)
 ```
 
-## ✅ 6. Statistics & EDA
+## 6. Statistics & EDA
 
 ```python
 df.describe()
@@ -91,7 +91,7 @@ df['col'].corr(df['col2'])
 df.cov()
 ```
 
-## ✅ 7. Time Series & Date Handling
+## 7. Time Series & Date Handling
 
 ```python
 df['date'] = pd.to_datetime(df['date'])
@@ -109,7 +109,7 @@ df.asfreq('D', method='ffill')
 pd.date_range('2024-01-01', periods=12, freq='M')
 ```
 
-## ✅ 8. Advanced Pandas
+## 8. Advanced Pandas
 
 ```python
 df.pipe(lambda d: d.dropna().sort_values('col'))
@@ -122,7 +122,7 @@ df.explode('col')
 pd.get_dummies(df['category'])
 ```
 
-## ✅ 9. Tips & Best Practices
+## 9. Tips & Best Practices
 
 - Always check `df.info()` and `df.head()` first
 - Use `.copy()` when slicing (`df2 = df[condition].copy()`)
